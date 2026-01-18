@@ -56,6 +56,7 @@ Primeiro, instale as dependências necessárias:
 
 ```bash
 pip install -r requirements.txt
+pip install streamlit ctransformers
 streamlit run app_local.py
 
 ---
