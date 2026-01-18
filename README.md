@@ -1,69 +1,58 @@
-Paper: Arandu Closer - Estratégia de Vendas Conversacionais com IA
-Resumo
+# **Arandu Closer - Conversational Commerce com IA**
 
-O projeto Arandu Closer é uma solução avançada de vendas conversacionais, projetada para maximizar conversões de vendas utilizando inteligência artificial (IA). Baseado em metodologias de vendas agressivas como o SPIN Selling, este sistema utiliza modelos de linguagem de última geração (LLM), como o GPT e a versão TinyLlama, para conduzir o usuário de maneira dinâmica e assertiva até a compra. A solução se distingue ao integrar dados reais de produtos (RAG) com feedback inteligente para quebra de objeções em tempo real.
+## **Descrição do Projeto**
 
-1. Introdução
+O **Arandu Closer** é uma solução avançada de **vendas conversacionais** que utiliza **inteligência artificial (IA)** para **maximizar conversões de vendas** de forma rápida e eficiente. Utilizando o modelo **TinyLlama 1.1B** em **modo local**, e a metodologia de **SPIN Selling**, o sistema diagnostica a dor do cliente e oferece uma solução direta, com foco em **fechamento imediato de vendas**.
 
-O Arandu Closer utiliza técnicas de vendas conversacionais para melhorar o processo de compra, tornando-o mais direto e eficiente. Em vez de depender de páginas de vendas estáticas, a solução transforma a experiência de compra em uma conversa, onde a IA atua como um "closer digital", fechando vendas ao mesmo tempo em que resolve objeções e conduz o cliente à conversão.
+Este projeto foi desenvolvido para melhorar a experiência de **venda online**, aproveitando IA para fornecer respostas rápidas, personalizadas e com links de pagamento integrados, tudo em tempo real.
 
-Objetivo
+---
 
-Desenvolver uma ferramenta de conversational commerce que atue como um vendedor digital altamente eficiente, com base em IA, para otimizar a jornada do cliente e aumentar a taxa de conversão de e-commerce, sem a fricção encontrada nas páginas de vendas tradicionais.
+## **Funcionalidades**
 
-2. Descrição do Projeto
-2.1. Arquitetura do Sistema
+- **Vendas Conversacionais**: A IA atua como um **"closer digital"**, conduzindo o usuário pela jornada de compra e sempre focando no fechamento rápido da venda.
+- **Integração de Dados Reais (RAG)**: O sistema integra uma **base de dados simples** de produtos reais, garantindo respostas precisas e evitando **alucinações** típicas de modelos de IA.
+- **Modelo de IA Local**: Usando o modelo **TinyLlama 1.1B**, rodando localmente em **CPU**, para reduzir custos e aumentar a **eficiência**.
+- **Fechamento de Vendas em Tempo Real**: A IA é configurada para **diagnosticar rapidamente** o problema do cliente e **oferecer soluções imediatas** com links de pagamento.
+- **Interface de Conversação com Streamlit**: A interface é construída usando o **Streamlit**, proporcionando uma experiência de chat interativa e de fácil uso.
 
-O Arandu Closer é dividido em três componentes principais:
+---
 
-O Cérebro (Prompt de Sistema): A IA é configurada com um prompt de sistema agressivo que foca em vendas diretas e na aplicação da metodologia SPIN Selling para identificar e fechar a dor do cliente rapidamente.
+## **Tecnologias Utilizadas**
 
-Memória RAG (Retrieval-Augmented Generation): A IA consulta um banco de dados simples, mas eficiente, de produtos reais para garantir que as respostas não sejam baseadas em alucinações, mas em informações precisas de estoque e preços.
+- **OpenAI GPT** (para versão de IA baseada em nuvem)
+- **TinyLlama 1.1B** (modelo local, rodando em CPU)
+- **Streamlit** (para criação da interface de usuário)
+- **ctransformers** (para carregar e executar o modelo TinyLlama)
+- **Python** (para lógica e integração do sistema)
 
-Interface de Conversação (Streamlit): O sistema é integrado a uma interface de chat interativo, onde o cliente é guiado pela IA através de um processo de venda dinâmico, sempre com perguntas de fechamento, quebra de objeções e links de pagamento diretos.
+---
 
-2.2. Tecnologias Utilizadas
+## **Como Funciona**
 
-Modelos de Linguagem (GPT e TinyLlama): O GPT da OpenAI é utilizado para lidar com conversações complexas e gerar respostas humanas, enquanto o TinyLlama, rodando localmente, é usado para garantir respostas rápidas e eficientes, além de permitir uma execução de IA mais barata em CPU.
+1. **Inicialização**: O sistema começa com uma **mensagem agressiva de vendas** para entender a dor do cliente.
+2. **Consultando Estoque**: Quando o cliente faz uma pergunta, a IA consulta uma **base de dados de produtos reais** para fornecer respostas rápidas e precisas.
+3. **Diagnóstico e Fechamento**: A IA diagnostica a dor do cliente e oferece a **solução perfeita** com links de pagamento prontos.
+4. **Integração Local**: O modelo **TinyLlama** roda localmente em **CPU**, garantindo que o processo de vendas seja ágil e econômico.
 
-Base de Dados de Produtos: A solução utiliza um banco de dados simples (hash map), mas eficiente, para armazenar informações sobre produtos em tempo real, incluindo preço, estoque e link de pagamento.
+---
 
-Streamlit: A interface de chat interativo é construída usando o Streamlit, que fornece uma plataforma fácil e rápida para criar a interface de usuário, facilitando o processo de interação entre a IA e o cliente.
+## **Estrutura do Código**
 
-3. Modelos Utilizados
-3.1. GPT - Modelo de Conversação (Generative Pre-trained Transformer)
+- **`app_local.py`**: O arquivo principal que configura a aplicação e executa o modelo de IA.
+- **`ESTOQUE_ARANDU`**: Um dicionário simples que simula um banco de dados de produtos.
+- **`recuperar_contexto()`**: Função que busca palavras-chave do usuário e recupera os dados reais do estoque.
+- **`formatar_prompt_tinyllama()`**: Função que formata o histórico da conversa para o modelo de IA TinyLlama.
+- **`carregar_cerebro()`**: Função que carrega o modelo de IA **TinyLlama 1.1B** localmente.
+- **Streamlit Interface**: Exibe a interface do chat onde o usuário pode interagir com o **Arandu Closer**.
 
-O GPT é utilizado no Arandu Closer como o núcleo de inteligência conversacional. Ele foi treinado para gerar texto natural e coerente, simular conversas realistas e responder às necessidades do usuário. No contexto de vendas, o GPT é configurado para ser agressivo, direto e focado em fechar vendas.
+---
 
-3.2. TinyLlama - Versão Local
+## **Instruções de Execução**
 
-O TinyLlama é uma versão quantizada e otimizada do modelo Llama da Meta, que permite a execução local com menor consumo de recursos, tornando-o ideal para execução em CPU, sem necessidade de hardware especializado (como GPUs). O TinyLlama 1.1B é carregado diretamente na máquina local para garantir uma resposta mais rápida e econômica, além de não depender de API externas.
+### 1. **Configuração do Ambiente**
 
-4. Comparação com Soluções Existentes no Mercado
-4.1. Soluções de Conversational Commerce
+Primeiro, instale as dependências necessárias:
 
-No mercado, startups como Konvo AI, Odisseia AI, e grandes players como Palantir oferecem soluções que utilizam IA para vendas conversacionais, com ênfase na personalização, análise de dados em tempo real e conversão de vendas. No entanto, o Arandu Closer se distingue pela agilidade no fechamento de vendas, integrando dados reais de produtos diretamente na conversa e oferecendo links de pagamento imediatos, sem a fricção de um processo de venda longo.
-
-4.2. Vantagens do Arandu Closer
-
-O Arandu Closer apresenta algumas vantagens sobre as soluções existentes:
-
-Agilidade e Simplicidade: O foco do Arandu Closer está em respostas rápidas, diagnóstico preciso e fechamento imediato, sem perder tempo em longas interações.
-
-Modelo de IA Local (TinyLlama): O uso de um modelo de IA local, rodando em CPU, oferece uma solução econômica para empresas que não querem depender de infraestrutura externa de nuvem e podem escalar localmente.
-
-Memória de Estoque RAG: O sistema consulta uma base de dados real de produtos a partir de palavras-chave do usuário, garantindo respostas precisas e evitando as alucinações que muitos modelos de IA ainda apresentam.
-
-5. Resultados Esperados
-
-A implementação do Arandu Closer visa alcançar:
-
-Maior taxa de conversão de visitantes em compradores, através de uma abordagem direta e agressiva de vendas.
-
-Melhora na experiência do cliente, oferecendo respostas rápidas e personalizadas que resolvem a dor do cliente de maneira imediata.
-
-Eficiência de custos, ao rodar IA localmente sem precisar de grandes investimentos em infraestrutura de nuvem.
-
-6. Conclusão
-
-O Arandu Closer é uma solução de vendas conversacionais que combina inteligência artificial, estratégias de vendas agressivas e dados reais de produtos para maximizar conversões de vendas de forma rápida e eficiente. Ele se destaca pela integração local do modelo IA (TinyLlama) e pela capacidade de fechar vendas diretamente, usando o poder da inteligência conversacional de última geração, sem fricções e com foco no cliente.
+```bash
+pip install -r requirements.txt
