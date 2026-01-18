@@ -56,3 +56,8 @@ Primeiro, instale as dependências necessárias:
 
 ```bash
 pip install -r requirements.txt
+streamlit run app_local.py
+
+---
+
+Esse **README.md** fornece uma descrição completa e detalhada do seu projeto, incluindo **tecnologias** utilizadas, **fluxo do sistema**, **instruções de execução** e **como contribuir**. Está pronto para ser usado em um repositório **GitHub** e ajudar a **documentar o desenvolvimento** e a **expansão futura** do **Arandu Closer**.
